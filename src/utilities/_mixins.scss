@@ -1,0 +1,21 @@
+@mixin display($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin border($weight, $color, $radius) {
+  border: $weight solid $color;
+  border-radius: $radius
+}
+
+@mixin font($color, $size, $weight) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
