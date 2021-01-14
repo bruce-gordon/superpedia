@@ -1,0 +1,42 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.nav-bar {
+  background-color: $blue;
+  color: $white;
+  @include size(15%, 100%);
+  @include display(column, none, center)
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-title {
+  font-size: 2.25vw;
+  margin-bottom: .75vh;
+}
+
+.nav-sub-title {
+  text-align: center;
+  width: 80%;
+  @include font(auto, 1.75vw, normal);
+  margin-top: .25vh;
+  padding-bottom: 1vh;
+  border-bottom: 2px solid $white;
+}
+
+.nav-button-container {
+  @include display(column, space-around, center);
+  @include size(90%, 50%);
+}
+
+.nav-button {
+  background-color: $green;
+  @include font($white, 1.5vw, auto);
+  @include size(75%, 20%);
+  @include border(2px, $white, 5px);
+  &:hover {
+    font-weight: bold;
+    @include border(4px, $white, 5px);
+
+  }
+}
