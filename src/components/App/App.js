@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <header className='App-header'>
       <div>
