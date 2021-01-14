@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js'
-import './App.css';
+import './App.scss';
 
 const App = () => {
   return (

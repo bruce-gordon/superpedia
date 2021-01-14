@@ -10,9 +10,9 @@ const Navbar = () => {
       <h3 className='nav-sub-title'> Your guide for all things super
       </h3>
       <div className='nav-button-container'>
-        <button className='nav-button'>Saved Supers
-        </button>
         <button className='nav-button'>New Search
+        </button>
+        <button className='nav-button'>Saved Supers
         </button>
         <button className='nav-button'>Create Your Own Super
         </button>
