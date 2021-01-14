@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar.js'
+import Navbar from '../Navbar/Navbar.js';
+import Search from '../Search/Search.js';
 import './App.scss';
 
 const App = () => {
-  return (
-    <main className='App'>
-      <Navbar />
-      <header className='App-header'>
-        <div>
+  const [charData, setCharData] = useState([]);
 
-        </div>
-      </header>
-    </main>
+  return (
+    <div className='App'>
+      <Navbar />
+      <main>
+        <header className='App-header'>
+        </header>
+        <Search />
+      </main>
+    </div>
   );
 }
 

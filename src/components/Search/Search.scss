@@ -1,0 +1,13 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.search-view {
+  @include display(column, none, center);
+  height: 80%;
+}
+.view-header {
+  @include font($coal, 2vw, auto);
+  @include space(4vw 0 0 0, 1vh 3vw);
+  @include border(4px, $blue, 10px);
+  background-color: $gray;
+}
