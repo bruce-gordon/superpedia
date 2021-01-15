@@ -1,0 +1,60 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+// * {
+//   border: 1px solid red;
+// }
+
+.result-card {
+  @include display(column, space-between, center);
+  @include size(30vw, 60vh);
+  @include space(1vh, 1vh);
+  @include border(2px, $white, 0);
+  @include font($white, auto, auto);
+  background-color: $blue;
+}
+
+.top-half {
+  @include size(90%, 30%);
+  @include display(row, space-between, center);
+  border-bottom: 1px solid $white;
+  padding-bottom: 2vh;
+}
+
+.name-div {
+  @include size(60%, 80%);
+  @include display(column, space-between, flex-start);
+
+}
+
+h4 {
+  @include space(.5vh 0, 0);
+  font-size: 3.5vh;
+}
+
+.real-name {
+  font-size: 2.75vh;
+  margin: 0;
+}
+
+.button-div {
+  @include size(25%, 80%);
+  @include display(row, space-between, center);
+
+}
+
+.result-button {
+  @include size(40%, auto);
+  @include space(0, 0);
+}
+
+.image-div {
+  @include size(auto, 65%);
+  border: 1px solid $white;
+  margin: 2vh;
+}
+
+.image {
+  @include size(auto, 100%);
+  object-fit: contain;
+}
