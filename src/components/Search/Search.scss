@@ -5,9 +5,46 @@
   @include display(column, none, center);
   height: 80%;
 }
+
 .view-header {
   @include font($coal, 2vw, auto);
   @include space(4vw 0 0 0, 1vh 3vw);
-  @include border(4px, $blue, 10px);
-  background-color: $gray;
+  @include border(4px, $blue, 5px);
+  background-color: $white;
+}
+
+.view-subheader {
+  @include font($coal, 1.5vw, normal);
+}
+
+.search-area {
+  @include display(column, none, center);
+  @include size(70%, 40%);
+  @include border(2px, $white, 0);
+  background-color: $blue;
+}
+
+.search-instructions {
+  @include font($white, 1.35vw, normal);
+  @include size(50%, 20%);
+  @include space(3vw 0 0 0, 1vh 3vw);
+  text-align: center;
+
+}
+.search-input {
+  @include size(70%, 10%);
+  @include space(.5vh, 1vh 1vw);
+  @include font($coal, 1.5vw, auto);
+
+}
+.submit-search {
+  @include font($white, 1.35vw, normal);
+  @include size(15%, 15%);
+  @include space(1vh, 0);
+  @include border(1px, $white, 5px);
+  background-color: $green;
+    &:hover {
+      font-weight: bold;
+      @include border(3px, $white, 5px);
+    }
 }
