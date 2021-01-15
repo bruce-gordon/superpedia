@@ -12,6 +12,11 @@ const Search = ({ getCharacter }) => {
   const handleClick = (event) => {
     event.preventDefault();
     getCharacter(charName);
+    clearInput();
+  }
+
+  const clearInput = () => {
+    setCharName('');
   }
 
   return (

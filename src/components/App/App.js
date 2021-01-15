@@ -7,11 +7,13 @@ import './App.scss';
 
 const App = () => {
   const [charData, setCharData] = useState([]);
+  const [error, setError] = useState('')
 
   const getCharacter = (name) => {
     console.log(name);
     getData(name)
-    .then((data) => console.log(data))
+    .then((data) => setCharData(data.results))
+    .catch(error => setError(error.message))
   }
 
   return (
