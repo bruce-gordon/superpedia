@@ -10,7 +10,7 @@ const Search = ({ getCharacter }) => {
   }
 
   const handleClick = (event) => {
-    event.preventDefault();
+    console.log(charName)
     getCharacter(charName);
     clearInput();
   }
@@ -40,9 +40,10 @@ const Search = ({ getCharacter }) => {
           onChange={ handleChange }>
         </input>
         <Link
+          to='/results'
           className='submit-search-link'
           onClick={ handleClick }
-          to='/results'>Search
+          >Search
           <button
             className='submit-search'
           >

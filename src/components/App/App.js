@@ -13,7 +13,7 @@ const App = () => {
   const getCharacter = (name) => {
     getData(name)
     .then((data) => setCharData(data.results))
-    .catch(error => setError(error.message))
+    .catch(error => setError(error.message));
   }
 
   return (
@@ -28,7 +28,7 @@ const App = () => {
             render={() => {
               return (
                 <ResultView
-
+                  searchResults={ charData }
                 />)}
             }>
           </Route>
