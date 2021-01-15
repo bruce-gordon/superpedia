@@ -2,16 +2,15 @@
 @import '../../utilities/mixins';
 
 .nav-bar {
+  @include size(18%, 100%);
+  @include display(column, none, center)
+  @include border(2px, $white, 0);
   background-color: $blue;
   color: $white;
-  @include size(15%, 100%);
-  @include display(column, none, center)
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
+
 .nav-title {
-  font-size: 2.25vw;
+  font-size: 2.75vw;
   margin-bottom: .75vh;
 }
 
