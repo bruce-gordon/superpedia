@@ -35,7 +35,7 @@
   @include size(70%, 10%);
   @include space(.5vh, 1vh 1vw);
   @include font($coal, 1.5vw, auto);
-
+  outline: none;
 }
 .submit-search {
   @include font($white, 1.35vw, normal);
@@ -43,6 +43,7 @@
   @include space(1vh, 0);
   @include border(1px, $white, 5px);
   background-color: $green;
+  outline: none;
     &:hover {
       font-weight: bold;
       @include border(3px, $white, 5px);
