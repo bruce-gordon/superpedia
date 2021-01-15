@@ -1,0 +1,14 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.result-view {
+  @include display(column, none, center);
+  height: 80%;
+}
+
+.view-header {
+  @include font($coal, 2vw, auto);
+  @include space(4vw 0 0 0, 1vh 3vw);
+  @include border(4px, $blue, 5px);
+  background-color: $white;
+}
