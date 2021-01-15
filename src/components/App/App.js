@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
 import Search from '../Search/Search.js';
 import ResultView from '../ResultView/ResultView.js'
-import {getData} from '../../utilities/apiCalls.js';
+import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
 
 const App = () => {
