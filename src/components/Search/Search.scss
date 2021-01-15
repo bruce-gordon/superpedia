@@ -37,15 +37,24 @@
   @include font($coal, 1.5vw, auto);
   outline: none;
 }
-.submit-search {
+
+.submit-search-link {
   @include font($white, 1.35vw, normal);
   @include size(15%, 15%);
   @include space(1vh, 0);
   @include border(1px, $white, 5px);
+  @include display(column, center, center);
+  text-decoration: none;
   background-color: $green;
   outline: none;
-    &:hover {
-      font-weight: bold;
-      @include border(3px, $white, 5px);
-    }
+  &:hover {
+    font-weight: bold;
+    @include border(3px, $white, 5px);
+  }
+}
+
+.submit-search {
+  border: none;
+  background-color: $green;
+  outline: none;
 }
