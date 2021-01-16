@@ -10,7 +10,6 @@ const Search = ({ getCharacter }) => {
   }
 
   const handleClick = (event) => {
-    console.log(charName)
     getCharacter(charName);
     clearInput();
   }

@@ -3,10 +3,14 @@ import { Link } from 'react-router-dom';
 import './Result.scss';
 import { info, plus } from '../../icons/icons.js';
 
-const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl }) => {
+const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter }) => {
 
   const getRealName = (realName) => {
     return realName ? realName : 'Real name unknown';
+  }
+
+  const goToCharacter = () => {
+    findCharacter(id);
   }
 
   return (
@@ -18,8 +22,14 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl 
           <p className='real-name'><i>{ getRealName(realName) }</i></p>
         </div>
         <div className='button-div'>
-          <Link to={`/character/${id}`} className='button-link'>
-            <p className='i-button'>{ info }
+          <Link
+            to={`/character/${id}`}
+            className='button-link'
+            onClick={ goToCharacter }>
+            <p
+              className='i-button'
+              onClick={ goToCharacter }
+            >{ info }
             </p>
           </Link>
           <p className='plus-button'>{ plus }

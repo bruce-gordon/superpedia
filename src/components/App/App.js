@@ -2,18 +2,26 @@ import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
 import Search from '../Search/Search.js';
-import ResultView from '../ResultView/ResultView.js'
+import ResultView from '../ResultView/ResultView.js';
+import Character from '../Character/Character.js';
 import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
 
 const App = () => {
-  const [charData, setCharData] = useState([]);
+  const [allCharData, setAllCharData] = useState([]);
+  const [character, setCharacter] = useState('');
   const [error, setError] = useState('')
 
   const getCharacter = (name) => {
     getData(name)
-    .then((data) => setCharData(data.results))
+    .then((data) => setAllCharData(data.results))
     .catch(error => setError(error.message));
+  }
+
+  const findCharacter = async (id) => {
+    const match = allCharData.find(char => char.id === id);
+    await setCharacter(match);
+    console.log(character);
   }
 
   return (
@@ -24,16 +32,28 @@ const App = () => {
         </header>
         <Switch>
           <Route
-            path='/results'
+            exact path={'/character/:id'}
             render={() => {
               return (
-                <ResultView
-                  searchResults={ charData }
+                <Character
+                  key={ `${character.id}1` }
+                  id={ `${character.id}1` }
+                  details={ character }
                 />)}
             }>
           </Route>
           <Route
-            path='/'
+            exact path='/results'
+            render={() => {
+              return (
+                <ResultView
+                  searchResults={ allCharData }
+                  findCharacter={ findCharacter }
+                />)}
+            }>
+          </Route>
+          <Route
+            exact path='/'
             render={() => {
               return (
                 <Search
