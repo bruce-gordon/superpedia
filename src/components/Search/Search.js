@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Search.scss';
 
 const Search = ({ getCharacter }) => {
@@ -10,13 +10,17 @@ const Search = ({ getCharacter }) => {
   }
 
   const handleClick = (event) => {
-    event.preventDefault();
+    console.log(charName)
     getCharacter(charName);
     clearInput();
   }
 
   const clearInput = () => {
     setCharName('');
+  }
+
+  const disableLink = () => {
+
   }
 
   return (
@@ -35,10 +39,16 @@ const Search = ({ getCharacter }) => {
           value={ charName }
           onChange={ handleChange }>
         </input>
-        <button
-          className='submit-search'
-          onClick={ handleClick }>Search
-        </button>
+        <Link
+          to='/results'
+          className='submit-search-link'
+          onClick={ handleClick }
+          >Search
+          <button
+            className='submit-search'
+          >
+          </button>
+        </Link>
       </form>
     </section>
   )
