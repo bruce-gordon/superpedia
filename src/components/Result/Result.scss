@@ -20,7 +20,6 @@
 .name-div {
   @include size(70%, 100%);
   @include display(column, space-between, flex-start);
-
 }
 
 h4 {
@@ -82,7 +81,6 @@ h4 {
   max-width: 90%;
   display: inline;
   @include display(row, space-between, center);
-
 }
 
 .image {
