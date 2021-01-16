@@ -2,11 +2,12 @@
 @import '../../utilities/mixins';
 
 .nav-bar {
-  @include size(18%, 100%);
+  @include size(22%, 100%);
   @include display(column, none, center)
   @include border(2px, $white, 0);
   background-color: $blue;
   color: $white;
+  position: fixed;
 }
 
 .nav-title {
