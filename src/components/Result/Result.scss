@@ -59,8 +59,10 @@ h4 {
 .plus-button {
   @include size(40%, 33%);
   @include space(0, 0);
-  // @include display(column, none, center);
-
+  &:hover {
+    color: $green;
+    @include size(45%, 37%);
+  }
 }
 
 .button-link {
@@ -68,6 +70,10 @@ h4 {
   @include space(0, 0);
   color: $white;
   outline: none;
+  &:hover {
+    color: $green;
+    @include size(45%, 37%);
+  }
 }
 
 .image-div {
