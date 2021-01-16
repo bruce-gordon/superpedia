@@ -41,9 +41,7 @@ h4 {
   word-wrap: break-word;
   display: block;
 }
-// * {
-//   border: 1px solid red;
-// }
+
 .button-div {
   @include size(25%, 80%);
   @include display(row, space-between, center);
