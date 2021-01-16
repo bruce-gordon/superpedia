@@ -6,7 +6,7 @@ import { info, plus } from '../../icons/icons.js';
 const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl }) => {
 
   const getRealName = (realName) => {
-    return realName ? realName : 'Unknown';
+    return realName ? realName : 'Real name unknown';
   }
 
   return (
@@ -15,9 +15,7 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl 
         <div className='name-div'>
           <h4>{ name }
           </h4>
-          <p className='real-name'><i>Real name:</i>
-          </p>
-          <p className='real-name'>{ getRealName(realName) }</p>
+          <p className='real-name'><i>{ getRealName(realName) }</i></p>
         </div>
         <div className='button-div'>
           <p className='result-button'>{ info }

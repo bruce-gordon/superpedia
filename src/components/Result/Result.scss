@@ -1,40 +1,46 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
-// * {
-//   border: 1px solid red;
-// }
-
 .result-card {
   @include display(column, space-between, center);
-  @include size(30vw, 60vh);
-  @include space(1vh, 1vh);
+  @include size(21vw, 60vh);
+  @include space(1.75vw, 1vh);
   @include border(2px, $white, 0);
   @include font($white, auto, auto);
   background-color: $blue;
 }
 
 .top-half {
-  @include size(90%, 30%);
+  @include size(95%, 25%);
   @include display(row, space-between, center);
   border-bottom: 1px solid $white;
-  padding-bottom: 2vh;
+  padding-bottom: 1vh;
 }
 
 .name-div {
-  @include size(60%, 80%);
+  @include size(70%, 100%);
   @include display(column, space-between, flex-start);
 
 }
 
 h4 {
-  @include space(.5vh 0, 0);
+  margin: 1vh 0;
+  height: 55%;
   font-size: 3.5vh;
+  overflow-x: scroll;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
 }
 
 .real-name {
   font-size: 2.75vh;
+  height: 3.75vh;
   margin: 0;
+  overflow: auto;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
 }
 
 .button-div {
@@ -49,12 +55,17 @@ h4 {
 }
 
 .image-div {
-  @include size(auto, 65%);
+  height: 65%;
   border: 1px solid $white;
   margin: 2vh;
+  max-width: 90%;
+  display: inline;
 }
 
 .image {
   @include size(auto, 100%);
   object-fit: contain;
+  display: inline;
+  max-width: 100%;
+
 }

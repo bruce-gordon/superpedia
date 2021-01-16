@@ -24,7 +24,9 @@ const ResultView = ({ searchResults }) => {
       className='result-view'>
       <h1 className='view-header'>Search Results
       </h1>
+      <div className='result-container'>
       { results }
+      </div>
     </section>
   )
 }
