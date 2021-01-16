@@ -42,16 +42,32 @@ h4 {
   word-wrap: break-word;
   display: block;
 }
-
+// * {
+//   border: 1px solid red;
+// }
 .button-div {
   @include size(25%, 80%);
   @include display(row, space-between, center);
 
 }
 
-.result-button {
-  @include size(40%, auto);
+.i-button {
+  @include size(100%, 100%);
   @include space(0, 0);
+}
+
+.plus-button {
+  @include size(40%, 33%);
+  @include space(0, 0);
+  // @include display(column, none, center);
+
+}
+
+.button-link {
+  @include size(40%, 33%);
+  @include space(0, 0);
+  color: $white;
+  outline: none;
 }
 
 .image-div {

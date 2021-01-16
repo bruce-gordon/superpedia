@@ -18,15 +18,18 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl 
           <p className='real-name'><i>{ getRealName(realName) }</i></p>
         </div>
         <div className='button-div'>
-          <p className='result-button'>{ info }
-          </p>
-          <p className='result-button'>{ plus }
+          <Link to={`/character/${id}`} className='button-link'>
+            <p className='i-button'>{ info }
+            </p>
+          </Link>
+          <p className='plus-button'>{ plus }
           </p>
         </div>
       </div>
       <div className='image-div'>
         <img
           className='image'
+          alt={`character-image-${name}`}
           src={images.original_url}>
         </img>
       </div>
