@@ -1,10 +1,6 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
-// * {
-//   border: 1px solid white;
-// }
-
 .character-view {
   @include display(column, none, center);
   height: auto;
@@ -71,11 +67,18 @@
   @include display(row, none, center);
 }
 
-.plus-button-char {
-  @include size(10%, 10%);
-  @include space(2vh 0 0 1vw, 0);
+.plus-container {
+  height: 15%;
+  @include display(row, none, center);
+  @include space(0 0 0 1vw, 0);
+
+}
+
+.svg-inline--fa {
+  @include size(4vh, 4vh);
+
   &:hover {
     color: $green;
-    @include size(11%, 11%);
+    @include size(5vh, 5vh);
   }
 }

@@ -45,8 +45,9 @@ const Character = ({ id, details }) => {
                 </p>
               </a>
             </div>
-            <p className='plus-button-char'>{ plus }
-            </p>
+            <div className='plus-container'>
+            { plus }
+            </div>
           </div>
           </article>
         </section>
