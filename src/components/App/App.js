@@ -90,6 +90,7 @@ const App = () => {
             render={() => {
               return (
                 <ResultView
+                  saved={ saved }
                   searchResults={ allCharData }
                   findCharacter={ findCharacter }
                   updateSavedById={ updateSavedById }

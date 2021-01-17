@@ -18,7 +18,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
     return charData ? charData.aliases.replaceAll('\r\n', ', ') : '';
   }
 
-  const handleClick = async (charData) => {
+  const handleClick = (charData) => {
     if (!isSaved) {
       updateSaved(charData);
       setIsSaved(true);

@@ -56,6 +56,13 @@
   @include display(column, space-around, center);
 }
 
+.button-link-saved {
+  color: $green;
+  @include space(0, 0);
+  @include size(70%, 70%);
+  @include display(column, space-around, center);
+}
+
 .icon {
   @include size(70%, 70%);
   @include space(0, 0);

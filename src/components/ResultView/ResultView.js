@@ -2,7 +2,7 @@ import React from 'react';
 import './ResultView.scss';
 import Result from '../Result/Result.js';
 
-const ResultView = ({ searchResults, findCharacter, updateSavedById }) => {
+const ResultView = ({ searchResults, findCharacter, updateSavedById, saved }) => {
   const results = searchResults.map(result => {
     return (
       <Result
@@ -17,6 +17,7 @@ const ResultView = ({ searchResults, findCharacter, updateSavedById }) => {
         siteUrl={ result.site_detail_url }
         findCharacter={ findCharacter }
         updateSavedById={ updateSavedById }
+        saved={ saved }
       />
     )
   })
