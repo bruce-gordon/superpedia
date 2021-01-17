@@ -3,7 +3,6 @@
 
 .result-view {
   @include display(column, none, center);
-  height: auto;
 }
 
 .view-header {

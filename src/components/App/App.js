@@ -10,6 +10,7 @@ import './App.scss';
 const App = () => {
   const [allCharData, setAllCharData] = useState([]);
   const [character, setCharacter] = useState('');
+  const [saved, setSaved] = useState([]);
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -25,6 +26,11 @@ const App = () => {
   const findCharacter = (id) => {
     const match = allCharData.find(char => char.id === id);
     setCharacter(match);
+  }
+
+  const updatedSaved = (id) => {
+    const match = allCharData.find(char => char.id === id);
+    setSaved([...saved, match]);
   }
 
   return (
@@ -52,6 +58,7 @@ const App = () => {
                 <ResultView
                   searchResults={ allCharData }
                   findCharacter={ findCharacter }
+                  updatedSaved={ updatedSaved }
                 />)}
             }>
           </Route>

@@ -74,11 +74,11 @@
 
 }
 
-.svg-inline--fa {
-  @include size(4vh, 4vh);
-
-  &:hover {
-    color: $green;
-    @include size(5vh, 5vh);
-  }
-}
+// .svg-inline--fa {
+//   @include size(80%, 80%);
+//
+//   &:hover {
+//     color: $green;
+//     // @include size(5vh, 5vh);
+//   }
+// }
