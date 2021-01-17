@@ -43,8 +43,8 @@ const Character = ({ id, details, updateSaved, saved }) => {
         <h1 className='view-header'>No character to   display --  Please try a new search
         </h1>}
       {charData &&
-        <div>
-          <h1 className='view-header'>{ charData.name }
+        <div className='character-area'>
+          <h1 className='view-header-char'>{ charData.name }
           </h1>
           <article className='char-bio-area'>
             <div className='image-div-char'>

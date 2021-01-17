@@ -2,13 +2,18 @@
 @import '../../utilities/mixins';
 
 .search-view {
-  @include display(column, none, center);
+  @include display(column, center, center);
   width: 100%;
 }
 
-.view-header {
+.character-area {
+  @include display(column, center, center);
+}
+
+.view-header-char {
   @include font($coal, 2vw, auto);
-  @include space(4vw 0 0 0, 1vh 3vw);
+  @include space(1vw 0 0 0, 1vh 3vw);
+  @include size(auto, auto);
   @include border(4px, $blue, 5px);
   background-color: $white;
 }
