@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
 import Search from '../Search/Search.js';
 import ResultView from '../ResultView/ResultView.js';
+import SavedView from '../SavedView/SavedView.js';
 import Character from '../Character/Character.js';
 import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
@@ -57,6 +58,17 @@ const App = () => {
         <header className='App-header'>
         </header>
         <Switch>
+          <Route
+            exact path='/saved'
+            render={() => {
+              return (
+                <SavedView
+                  saved={ saved }
+                  findCharacter={ findCharacter }
+                  updateSavedById={ updateSavedById }
+                />)}
+            }>
+          </Route>
           <Route
             exact path={'/character/:id'}
             render={({match}) => {

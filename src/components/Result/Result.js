@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Result.scss';
 import { info, plus } from '../../icons/icons.js';
+import './Result.scss';
 
 const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter, updateSavedById }) => {
 

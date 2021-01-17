@@ -1,7 +1,7 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
-.result-view {
+.saved-view {
   @include display(column, none, center);
 }
 
