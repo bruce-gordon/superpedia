@@ -18,10 +18,9 @@ const App = () => {
     .catch(error => setError(error.message));
   }
 
-  const findCharacter = async (id) => {
+  const findCharacter = (id) => {
     const match = allCharData.find(char => char.id === id);
-    await setCharacter(match);
-    console.log(character);
+    setCharacter(match);
   }
 
   return (
@@ -33,11 +32,11 @@ const App = () => {
         <Switch>
           <Route
             exact path={'/character/:id'}
-            render={() => {
+            render={({match}) => {
               return (
                 <Character
-                  key={ `${character.id}1` }
-                  id={ `${character.id}1` }
+                  key={ `${match.params.id}1` }
+                  id={ `${match.params.id}` }
                   details={ character }
                 />)}
             }>
