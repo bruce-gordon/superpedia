@@ -59,7 +59,6 @@
 .icon {
   @include size(70%, 70%);
   @include space(0, 0);
-  color: $white;
   outline: none;
   &:hover {
     color: $green;

@@ -73,26 +73,16 @@
 
 .plus-container {
   height: 15%;
-  @include display(row, center, center);
-  @include space(0 0 0 0, 0);
-  @include size(12%, 12%);
 
+  @include display(row, center, center);
+  @include space(0, 0);
+  @include size(12%, 12%);
 }
 
-// .plus-container.icon {
-//   height: 15%;
-//   color: red;
-//   @include display(row, none, center);
-//   @include space(0 0 0 1vw, 0);
-//   @include size(10%, auto);
-//
-// }
-
-// .svg-inline--fa {
-//   @include size(80%, 80%);
-//
-//   &:hover {
-//     color: $green;
-//     // @include size(5vh, 5vh);
-//   }
-// }
+.saved-plus-container {
+  height: 15%;
+  color: $green;
+  @include display(row, center, center);
+  @include space(0, 0);
+  @include size(12%, 12%);
+}

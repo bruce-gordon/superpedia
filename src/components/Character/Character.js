@@ -3,16 +3,38 @@ import './Character.scss';
 import { plus } from '../../icons/icons.js';
 import { getCharacterById } from '../../utilities/apiCalls.js';
 
-const Character = ({ id, details, updateSaved }) => {
-  const [charData, setCharData] = useState(details)
+const Character = ({ id, details, updateSaved, saved }) => {
+  const [charData, setCharData] = useState(details);
+  const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     getCharacterById(id)
     .then((data) => {setCharData(data.results)})
+    .then(() => { checkSaved() })
   }, [])
+
 
   const formatAliases = () => {
     return charData ? charData.aliases.replaceAll('\r\n', ', ') : '';
+  }
+
+  const handleClick = async (charData) => {
+    if (!isSaved) {
+      updateSaved(charData);
+      setIsSaved(true);
+    } else {
+      updateSaved(charData);
+      setIsSaved(false);
+    }
+  }
+
+  const checkSaved = () => {
+    const check = (saved.includes(charData)) ? true : false;
+    setIsSaved(check);
+  }
+
+  const getStyling = () => {
+    return (isSaved) ? 'saved-plus-container' : 'plus-container';
   }
 
   return (
@@ -49,8 +71,8 @@ const Character = ({ id, details, updateSaved }) => {
                 </a>
               </div>
               <div
-                className='plus-container'
-                onClick={ () => updateSaved(charData)}>
+                className={ getStyling() }
+                onClick={ () => handleClick(charData)}>
               { plus }
               </div>
             </div>

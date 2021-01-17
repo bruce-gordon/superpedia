@@ -41,7 +41,6 @@ const App = () => {
   }
 
   const updateSavedByChar = (character) => {
-    console.log(character);
     const savedChar = saved.find(char => char.id === parseInt(character.id));
     if (savedChar) {
       const remaining = saved.filter(char => char.id !== parseInt(character.id));
@@ -49,13 +48,10 @@ const App = () => {
     } else {
       setSaved([...saved, character]);
     }
+  }
 
-    // if (saved.includes(character)) {
-    //   const remaining = saved.filter(char => char !== character);
-    //   setSaved(remaining);
-    // } else {
-    //   setSaved([...saved, character]);
-    // }
+  const checkForSaved = () => {
+
   }
 
   return (
@@ -85,6 +81,7 @@ const App = () => {
                   id={ `${match.params.id}` }
                   details={ character }
                   updateSaved={ updateSavedByChar }
+                  saved={ saved }
                 />)}
             }>
           </Route>
