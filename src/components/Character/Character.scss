@@ -1,0 +1,84 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.character-view {
+  @include display(column, none, center);
+  height: auto;
+  padding: 2vh;
+  background-color: $gray;
+}
+
+.view-header {
+  @include font($coal, 2vw, auto);
+  @include space(1vw 0 0 0, 1vh 3vw);
+  @include border(4px, $blue, 5px);
+  background-color: $white;
+}
+
+.char-bio-area {
+  @include display(row, space-between, center);
+  @include size(88%, 62vh);
+  @include space(1vw 0 0 0, 1vh 2vw);
+  @include border(2px, $white, 0);
+  background-color: $blue;
+}
+
+.char-info {
+  @include font($white, 2.25vh, auto);
+  @include size(57%, 90%);
+  overflow: auto;
+}
+
+.image-div-char {
+  @include size(40%, 90%);
+  display: inline;
+}
+
+.image-char {
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border: 1px solid $white;
+}
+
+.link-to-info {
+  color: $white;
+  text-decoration: none;
+  background-color: $green;
+  font-size: 1.25vw;
+  @include space(0 0 0 1vw, .5vh 1vw);
+  @include border(1px, $white, 25px);
+  @include size(12vw, auto);
+  &:hover {
+    color: $white;
+    @include border(2px, $white, 25px);
+  }
+}
+
+.link-text {
+  color: $white;
+  text-decoration: none;
+}
+
+.link-container {
+  height: 5vh;
+  @include display(row, none, center);
+}
+
+.plus-container {
+  height: 15%;
+  @include display(row, none, center);
+  @include space(0 0 0 1vw, 0);
+
+}
+
+.svg-inline--fa {
+  @include size(4vh, 4vh);
+
+  &:hover {
+    color: $green;
+    @include size(5vh, 5vh);
+  }
+}

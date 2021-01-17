@@ -1,19 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
 import Search from '../Search/Search.js';
-import ResultView from '../ResultView/ResultView.js'
+import ResultView from '../ResultView/ResultView.js';
+import Character from '../Character/Character.js';
 import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
 
 const App = () => {
-  const [charData, setCharData] = useState([]);
+  const [allCharData, setAllCharData] = useState([]);
+  const [character, setCharacter] = useState('');
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    setAllCharData([]);
+  }, [])
 
   const getCharacter = (name) => {
     getData(name)
-    .then((data) => setCharData(data.results))
+    .then((data) => setAllCharData(data.results))
     .catch(error => setError(error.message));
+  }
+
+  const findCharacter = (id) => {
+    const match = allCharData.find(char => char.id === id);
+    setCharacter(match);
   }
 
   return (
@@ -24,16 +35,28 @@ const App = () => {
         </header>
         <Switch>
           <Route
-            path='/results'
-            render={() => {
+            exact path={'/character/:id'}
+            render={({match}) => {
               return (
-                <ResultView
-                  searchResults={ charData }
+                <Character
+                  key={ `${match.params.id}1` }
+                  id={ `${match.params.id}` }
+                  details={ character }
                 />)}
             }>
           </Route>
           <Route
-            path='/'
+            exact path='/results'
+            render={() => {
+              return (
+                <ResultView
+                  searchResults={ allCharData }
+                  findCharacter={ findCharacter }
+                />)}
+            }>
+          </Route>
+          <Route
+            exact path='/'
             render={() => {
               return (
                 <Search
