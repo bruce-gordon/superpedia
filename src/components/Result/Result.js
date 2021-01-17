@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Result.scss';
 import { info, plus } from '../../icons/icons.js';
 
-const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter }) => {
+const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter, updatedSaved }) => {
 
   const getRealName = (realName) => {
     return realName ? realName : 'Real name unknown';
@@ -27,7 +27,10 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
             className='button-link'
             onClick={ goToCharacter }>{ info }
           </Link>
-          <p className='button-link'>{ plus }
+          <p
+            className='button-link'
+            onClick={ () => updatedSaved(id) }
+          >{ plus }
           </p>
         </div>
       </div>
