@@ -1,10 +1,6 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
-// * {
-//   border: 1px solid white;
-// }
-
 .result-card {
   @include display(column, space-between, center);
   @include size(21vw, 60vh);
@@ -51,13 +47,11 @@
 .button-div {
   @include size(25%, 100%);
   @include display(column, space-around, center);
-  // margin-right: 1vw;
 }
 
 .button-link {
   @include space(0, 0);
   @include size(70%, 70%);
-
   @include display(column, space-around, center);
 
 }

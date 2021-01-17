@@ -1,6 +1,10 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
+// * {
+//   border: 1px solid white;
+// }
+
 .character-view {
   @include display(column, none, center);
   height: auto;
@@ -69,10 +73,20 @@
 
 .plus-container {
   height: 15%;
-  @include display(row, none, center);
-  @include space(0 0 0 1vw, 0);
+  @include display(row, center, center);
+  @include space(0 0 0 0, 0);
+  @include size(12%, 12%);
 
 }
+
+// .plus-container.icon {
+//   height: 15%;
+//   color: red;
+//   @include display(row, none, center);
+//   @include space(0 0 0 1vw, 0);
+//   @include size(10%, auto);
+//
+// }
 
 // .svg-inline--fa {
 //   @include size(80%, 80%);
