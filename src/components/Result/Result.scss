@@ -1,6 +1,10 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
+* {
+  border: 1px solid red;
+}
+
 .result-card {
   @include display(column, space-between, center);
   @include size(21vw, 60vh);
@@ -20,13 +24,15 @@
 .name-div {
   @include size(70%, 100%);
   @include display(column, space-between, flex-start);
+  overflow: auto;
+
 }
 
-h4 {
+.char-name {
   margin: 1vh 0;
   height: 55%;
   font-size: 3.5vh;
-  overflow-x: scroll;
+  overflow: auto;
   text-overflow: ellipsis;
   word-wrap: break-word;
   display: block;
@@ -44,22 +50,8 @@ h4 {
 
 .button-div {
   @include size(25%, 80%);
-  @include display(row, space-between, center);
-
-}
-
-.i-button {
-  @include size(100%, 100%);
-  @include space(0, 0);
-}
-
-.plus-button {
-  @include size(40%, 33%);
-  @include space(0, 0);
-  &:hover {
-    color: $green;
-    @include size(45%, 37%);
-  }
+  @include display(column, space-around, flex-end);
+  margin-right: 1vw;
 }
 
 .button-link {

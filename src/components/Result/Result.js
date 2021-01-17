@@ -17,7 +17,7 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
     <section className='result-card'>
       <div className='top-half'>
         <div className='name-div'>
-          <h4>{ name }
+          <h4 className='char-name'>{ name }
           </h4>
           <p className='real-name'><i>{ getRealName(realName) }</i></p>
         </div>
@@ -25,14 +25,9 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
           <Link
             to={`/character/${id}`}
             className='button-link'
-            onClick={ goToCharacter }>
-            <p
-              className='i-button'
-              onClick={ goToCharacter }
-            >{ info }
-            </p>
+            onClick={ goToCharacter }>{ info }
           </Link>
-          <p className='plus-button'>{ plus }
+          <p className='button-link'>{ plus }
           </p>
         </div>
       </div>
