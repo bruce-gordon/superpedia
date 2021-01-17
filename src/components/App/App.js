@@ -16,7 +16,15 @@ const App = () => {
 
   useEffect(() => {
     setAllCharData([]);
+    getLocalStorage()
   }, [])
+
+  const getLocalStorage = async () => {
+    const storedChars =  JSON.parse(localStorage.getItem('savedChars'));
+    if (storedChars !== null) {
+      await setSaved(storedChars);
+    }
+  }
 
   const getCharacter = (name) => {
     getData(name)
@@ -34,9 +42,11 @@ const App = () => {
     if (savedChar) {
       const remaining = saved.filter(char => char.id !== id);
       setSaved(remaining);
+      localStorage.setItem('savedChars', JSON.stringify(remaining));
     } else {
       const match = allCharData.find(char => char.id === id);
       setSaved([...saved, match]);
+      localStorage.setItem('savedChars', JSON.stringify([...saved, match]));
     }
   }
 
@@ -45,8 +55,10 @@ const App = () => {
     if (savedChar) {
       const remaining = saved.filter(char => char.id !== parseInt(character.id));
       setSaved(remaining);
+      localStorage.setItem('savedChars', JSON.stringify(remaining))
     } else {
       setSaved([...saved, character]);
+      localStorage.setItem('savedChars', JSON.stringify([...saved, character]));
     }
   }
 

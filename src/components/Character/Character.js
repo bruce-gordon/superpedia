@@ -5,12 +5,14 @@ import { getCharacterById } from '../../utilities/apiCalls.js';
 
 const Character = ({ id, details, updateSaved, saved }) => {
   const [charData, setCharData] = useState(details);
+  const [allSaved, setAllSaved] = useState([]);
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     getCharacterById(id)
-    .then((data) => {setCharData(data.results)})
-    .then(() => { checkSaved() })
+    .then((data) => { setCharData(data.results) })
+    .then(() => setAllSaved(saved))
+    .then(() => checkSaved())
   }, [])
 
 
@@ -29,8 +31,9 @@ const Character = ({ id, details, updateSaved, saved }) => {
   }
 
   const checkSaved = () => {
-    const check = (saved.includes(charData)) ? true : false;
-    setIsSaved(check);
+    setAllSaved(saved);
+    const check = saved.find(char => char.id === parseInt(id));
+    (check) ? setIsSaved(true) : setIsSaved(false);
   }
 
   const getStyling = () => {
@@ -40,7 +43,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
   return (
     <section className='character-view'>
       {!charData &&
-        <h1 className='view-header'>No character to   display --  Please try a new search
+        <h1 className='view-header'>Loading character data --  Please wait or click New Search to try again
         </h1>}
       {charData &&
         <div className='character-area'>
