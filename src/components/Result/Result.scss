@@ -1,10 +1,6 @@
 @import '../../utilities/variables';
 @import '../../utilities/mixins';
 
-* {
-  border: 1px solid red;
-}
-
 .result-card {
   @include display(column, space-between, center);
   @include size(21vw, 60vh);
