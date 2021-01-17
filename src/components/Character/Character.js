@@ -8,14 +8,11 @@ const Character = ({ id, details }) => {
 
   useEffect(() => {
     getCharacterById(id)
-    .then((data) => {
-      setCharData(data.results)
-      console.log(data)
-    })
+    .then((data) => {setCharData(data.results)})
   }, [])
 
   const formatAliases = () => {
-    return charData ? charData.aliases.replaceAll('\r\n', ', ') : ''
+    return charData ? charData.aliases.replaceAll('\r\n', ', ') : '';
   }
 
   const manageRender = () => {
