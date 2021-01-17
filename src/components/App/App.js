@@ -31,10 +31,8 @@ const App = () => {
 
   const updateSavedById = (id) => {
     const savedChar = saved.find(char => char.id === id);
-    console.log(savedChar);
     if (savedChar) {
       const remaining = saved.filter(char => char.id !== id);
-      console.log('test', remaining);
       setSaved(remaining);
     } else {
       const match = allCharData.find(char => char.id === id);
@@ -43,12 +41,21 @@ const App = () => {
   }
 
   const updateSavedByChar = (character) => {
-    if (saved.includes(character)) {
-      const remaining = saved.filter(char => char !== character);
+    console.log(character);
+    const savedChar = saved.find(char => char.id === parseInt(character.id));
+    if (savedChar) {
+      const remaining = saved.filter(char => char.id !== parseInt(character.id));
       setSaved(remaining);
     } else {
       setSaved([...saved, character]);
     }
+
+    // if (saved.includes(character)) {
+    //   const remaining = saved.filter(char => char !== character);
+    //   setSaved(remaining);
+    // } else {
+    //   setSaved([...saved, character]);
+    // }
   }
 
   return (

@@ -28,7 +28,7 @@ const Saved = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, 
             onClick={ goToCharacter }>{ info }
           </Link>
           <p
-            className='button-link'
+            className='button-link-save'
             onClick={ () => updateSavedById(id) }
           >{ plus }
           </p>
