@@ -15,14 +15,7 @@ const Character = ({ id, details }) => {
   }, [])
 
   const formatAliases = () => {
-    let aliases;
-    if (charData) {
-      aliases = charData.aliases.replaceAll('\r\n', ', ')
-      return aliases;
-    } else {
-      aliases = ''
-      return aliases;
-    }
+    return charData ? charData.aliases.replaceAll('\r\n', ', ') : ''
   }
 
   const manageRender = () => {
