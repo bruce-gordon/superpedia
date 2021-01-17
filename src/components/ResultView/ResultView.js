@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ResultView.scss';
 import Result from '../Result/Result.js';
 

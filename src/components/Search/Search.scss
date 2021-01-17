@@ -52,8 +52,14 @@
   }
 }
 
-.submit-search {
-  border: none;
-  background-color: $green;
+.disabled-link {
+  pointer-events: none;
+  @include font($coal, 1.35vw, normal);
+  @include size(15%, 15%);
+  @include space(1vh, 0);
+  @include border(1px, $coal, 5px);
+  @include display(column, center, center);
+  text-decoration: none;
+  background-color: $gray;
   outline: none;
 }

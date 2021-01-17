@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Result.scss';
 import { info, plus } from '../../icons/icons.js';
@@ -39,7 +39,7 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
       <div className='image-div'>
         <img
           className='image'
-          alt={`character-image-${name}`}
+          alt={`${name}`}
           src={images.original_url}>
         </img>
       </div>

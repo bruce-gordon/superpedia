@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
 import Search from '../Search/Search.js';
@@ -11,6 +11,10 @@ const App = () => {
   const [allCharData, setAllCharData] = useState([]);
   const [character, setCharacter] = useState('');
   const [error, setError] = useState('')
+
+  useEffect(() => {
+    setAllCharData([]);
+  }, [])
 
   const getCharacter = (name) => {
     getData(name)

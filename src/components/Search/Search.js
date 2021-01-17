@@ -19,7 +19,8 @@ const Search = ({ getCharacter }) => {
   }
 
   const disableLink = () => {
-
+    let isDisabled = charName ? 'submit-search-link' : 'disabled-link';
+    return isDisabled
   }
 
   return (
@@ -40,13 +41,10 @@ const Search = ({ getCharacter }) => {
         </input>
         <Link
           to='/results'
-          className='submit-search-link'
+          className={ disableLink() }
           onClick={ handleClick }
           >Search
-          <button
-            className='submit-search'
-          >
-          </button>
+
         </Link>
       </form>
     </section>

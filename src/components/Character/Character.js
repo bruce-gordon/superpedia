@@ -25,7 +25,7 @@ const Character = ({ id, details }) => {
           <div className='image-div-char'>
             <img
               className='image-char'
-              alt={`character-image-${charData.name}`}
+              alt={`${charData.name}`}
               src={charData.image.original_url}>
             </img>
           </div>
@@ -38,6 +38,7 @@ const Character = ({ id, details }) => {
               <a
                 href={ charData.site_detail_url }
                 target="_blank"
+                rel="noreferrer"
                 className='link-text'>
                 <p className='link-to-info'>
                   More information...
