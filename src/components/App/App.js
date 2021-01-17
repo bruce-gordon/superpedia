@@ -28,9 +28,26 @@ const App = () => {
     setCharacter(match);
   }
 
-  const updatedSaved = (id) => {
-    const match = allCharData.find(char => char.id === id);
-    setSaved([...saved, match]);
+  const updateSavedById = (id) => {
+    const savedChar = saved.find(char => char.id === id);
+    console.log(savedChar);
+    if (savedChar) {
+      const remaining = saved.filter(char => char.id !== id);
+      console.log('test', remaining);
+      setSaved(remaining);
+    } else {
+      const match = allCharData.find(char => char.id === id);
+      setSaved([...saved, match]);
+    }
+  }
+
+  const updateSavedByChar = (character) => {
+    if (saved.includes(character)) {
+      const remaining = saved.filter(char => char !== character);
+      setSaved(remaining);
+    } else {
+      setSaved([...saved, character]);
+    }
   }
 
   return (
@@ -48,6 +65,7 @@ const App = () => {
                   key={ `${match.params.id}1` }
                   id={ `${match.params.id}` }
                   details={ character }
+                  updateSaved={ updateSavedByChar }
                 />)}
             }>
           </Route>
@@ -58,7 +76,7 @@ const App = () => {
                 <ResultView
                   searchResults={ allCharData }
                   findCharacter={ findCharacter }
-                  updatedSaved={ updatedSaved }
+                  updateSavedById={ updateSavedById }
                 />)}
             }>
           </Route>

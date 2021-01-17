@@ -3,7 +3,7 @@ import './Character.scss';
 import { plus } from '../../icons/icons.js';
 import { getCharacterById } from '../../utilities/apiCalls.js';
 
-const Character = ({ id, details }) => {
+const Character = ({ id, details, updateSaved }) => {
   const [charData, setCharData] = useState(details)
 
   useEffect(() => {
@@ -48,7 +48,9 @@ const Character = ({ id, details }) => {
                   </p>
                 </a>
               </div>
-              <div className='plus-container'>
+              <div
+                className='plus-container'
+                onClick={ () => updateSaved(charData)}>
               { plus }
               </div>
             </div>
