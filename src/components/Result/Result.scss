@@ -45,19 +45,31 @@
 }
 
 .button-div {
-  @include size(25%, 80%);
-  @include display(column, space-around, flex-end);
-  margin-right: 1vw;
+  @include size(25%, 100%);
+  @include display(column, space-around, center);
 }
 
 .button-link {
-  @include size(40%, 33%);
-  @include space(0, 0);
   color: $white;
+  @include space(0, 0);
+  @include size(70%, 70%);
+  @include display(column, space-around, center);
+}
+
+.button-link-saved {
+  color: $green;
+  @include space(0, 0);
+  @include size(70%, 70%);
+  @include display(column, space-around, center);
+}
+
+.icon {
+  @include size(70%, 70%);
+  @include space(0, 0);
   outline: none;
   &:hover {
     color: $green;
-    @include size(45%, 37%);
+    @include size(85%, 85%);
   }
 }
 

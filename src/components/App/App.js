@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar.js';
 import Search from '../Search/Search.js';
 import ResultView from '../ResultView/ResultView.js';
+import SavedView from '../SavedView/SavedView.js';
 import Character from '../Character/Character.js';
 import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
@@ -10,11 +11,20 @@ import './App.scss';
 const App = () => {
   const [allCharData, setAllCharData] = useState([]);
   const [character, setCharacter] = useState('');
+  const [saved, setSaved] = useState([]);
   const [error, setError] = useState('')
 
   useEffect(() => {
     setAllCharData([]);
+    getLocalStorage()
   }, [])
+
+  const getLocalStorage = async () => {
+    const storedChars =  JSON.parse(localStorage.getItem('savedChars'));
+    if (storedChars !== null) {
+      await setSaved(storedChars);
+    }
+  }
 
   const getCharacter = (name) => {
     getData(name)
@@ -27,6 +37,35 @@ const App = () => {
     setCharacter(match);
   }
 
+  const updateSavedById = (id) => {
+    const savedChar = saved.find(char => char.id === id);
+    if (savedChar) {
+      const remaining = saved.filter(char => char.id !== id);
+      setSaved(remaining);
+      localStorage.setItem('savedChars', JSON.stringify(remaining));
+    } else {
+      const match = allCharData.find(char => char.id === id);
+      setSaved([...saved, match]);
+      localStorage.setItem('savedChars', JSON.stringify([...saved, match]));
+    }
+  }
+
+  const updateSavedByChar = (character) => {
+    const savedChar = saved.find(char => char.id === parseInt(character.id));
+    if (savedChar) {
+      const remaining = saved.filter(char => char.id !== parseInt(character.id));
+      setSaved(remaining);
+      localStorage.setItem('savedChars', JSON.stringify(remaining))
+    } else {
+      setSaved([...saved, character]);
+      localStorage.setItem('savedChars', JSON.stringify([...saved, character]));
+    }
+  }
+
+  const checkForSaved = () => {
+
+  }
+
   return (
     <div className='App'>
       <Navbar />
@@ -35,6 +74,17 @@ const App = () => {
         </header>
         <Switch>
           <Route
+            exact path='/saved'
+            render={() => {
+              return (
+                <SavedView
+                  saved={ saved }
+                  findCharacter={ findCharacter }
+                  updateSavedById={ updateSavedById }
+                />)}
+            }>
+          </Route>
+          <Route
             exact path={'/character/:id'}
             render={({match}) => {
               return (
@@ -42,6 +92,8 @@ const App = () => {
                   key={ `${match.params.id}1` }
                   id={ `${match.params.id}` }
                   details={ character }
+                  updateSaved={ updateSavedByChar }
+                  saved={ saved }
                 />)}
             }>
           </Route>
@@ -50,8 +102,10 @@ const App = () => {
             render={() => {
               return (
                 <ResultView
+                  saved={ saved }
                   searchResults={ allCharData }
                   findCharacter={ findCharacter }
+                  updateSavedById={ updateSavedById }
                 />)}
             }>
           </Route>

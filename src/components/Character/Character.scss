@@ -10,7 +10,7 @@
 
 .view-header {
   @include font($coal, 2vw, auto);
-  @include space(1vw 0 0 0, 1vh 3vw);
+  @include space(2vw 0 0 0, 1vh 3vw);
   @include border(4px, $blue, 5px);
   background-color: $white;
 }
@@ -69,16 +69,15 @@
 
 .plus-container {
   height: 15%;
-  @include display(row, none, center);
-  @include space(0 0 0 1vw, 0);
-
+  @include display(row, center, center);
+  @include space(0, 0);
+  @include size(12%, 12%);
 }
 
-.svg-inline--fa {
-  @include size(4vh, 4vh);
-
-  &:hover {
-    color: $green;
-    @include size(5vh, 5vh);
-  }
+.saved-plus-container {
+  color: $green;
+  height: 15%;
+  @include display(row, center, center);
+  @include space(0, 0);
+  @include size(12%, 12%);
 }

@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Result.scss';
 import { info, plus } from '../../icons/icons.js';
+import './Result.scss';
 
-const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter }) => {
+const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter, updateSavedById, saved }) => {
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    checkSaved();
+  }, []);
 
   const getRealName = (realName) => {
     return realName ? realName : 'Real name unknown';
@@ -11,6 +16,25 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
 
   const goToCharacter = () => {
     findCharacter(id);
+  }
+
+  const handleClick = (id) => {
+    if (!isSaved) {
+      updateSavedById(id);
+      setIsSaved(true);
+    } else {
+      updateSavedById(id);
+      setIsSaved(false);
+    }
+  }
+
+  const checkSaved = () => {
+    const check = saved.find(char => char.id === id);
+    (check) ? setIsSaved(true) : setIsSaved(false);
+  }
+
+  const getStyling = () => {
+    return (isSaved) ? 'button-link-saved' : 'button-link';
   }
 
   return (
@@ -27,7 +51,10 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
             className='button-link'
             onClick={ goToCharacter }>{ info }
           </Link>
-          <p className='button-link'>{ plus }
+          <p
+            className={ getStyling() }
+            onClick={ () => handleClick(id) }
+          >{ plus }
           </p>
         </div>
       </div>

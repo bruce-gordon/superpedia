@@ -17,8 +17,9 @@ const Navbar = () => {
         >New Search
         </NavLink>
         <NavLink
-          to='/'
+          to='/saved'
           className='nav-link'
+          exact activeClassName={'selected-link'}
         >Saved Supers
         </NavLink>
         <NavLink

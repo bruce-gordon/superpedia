@@ -1,0 +1,85 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.result-card {
+  @include display(column, space-between, center);
+  @include size(21vw, 60vh);
+  @include space(1.75vw, 1vh);
+  @include border(2px, $white, 0);
+  @include font($white, auto, auto);
+  background-color: $blue;
+}
+
+.top-half {
+  @include size(95%, 25%);
+  @include display(row, space-between, center);
+  border-bottom: 1px solid $white;
+  padding-bottom: 1vh;
+}
+
+.name-div {
+  @include size(70%, 100%);
+  @include display(column, space-between, flex-start);
+  overflow: auto;
+}
+
+.char-name {
+  margin: 1vh 0;
+  height: 55%;
+  font-size: 3.5vh;
+  overflow: auto;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+}
+
+.real-name {
+  font-size: 2.75vh;
+  height: 3.75vh;
+  margin: 0;
+  overflow: auto;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: block;
+}
+
+.button-div {
+  @include size(25%, 100%);
+  @include display(column, space-around, center);
+}
+
+.button-link-save {
+  @include space(0, 0);
+  @include size(70%, 70%);
+  @include display(column, space-around, center);
+}
+
+.button-link-save svg {
+  color: $green;
+}
+
+.icon {
+  @include size(70%, 70%);
+  @include space(0, 0);
+  outline: none;
+  &:hover {
+    color: $green;
+    @include size(85%, 85%);
+  }
+}
+
+.image-div {
+  height: 65%;
+  margin: 2vh;
+  max-width: 90%;
+  display: inline;
+  @include display(row, space-between, center);
+}
+
+.image {
+  max-height: 100%;
+  object-fit: contain;
+  display: inline;
+  max-width: 100%;
+  border: 1px solid $white;
+}
