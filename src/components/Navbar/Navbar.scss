@@ -39,7 +39,18 @@
   text-decoration: none;
   &:hover {
     font-weight: bold;
-    // @include border(4px, $white, 5px);
+  }
+}
 
+.selected-link {
+  background-color: $purple;
+  @include font($white, 1.5vw, auto);
+  @include size(75%, 20%);
+  @include border(2px, $white, 5px);
+  @include display(row, center, center);
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    font-weight: bold;
   }
 }

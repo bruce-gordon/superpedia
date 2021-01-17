@@ -13,6 +13,7 @@ const Navbar = () => {
         <NavLink
           to='/'
           className='nav-link'
+          exact activeClassName={'selected-link'}
         >New Search
         </NavLink>
         <NavLink
