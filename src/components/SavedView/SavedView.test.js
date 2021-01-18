@@ -32,10 +32,10 @@ describe('SavedView', () => {
   })
 
   it('should be able to use buttons on Saved card', () => {
-    const saveBtn = screen.getByRole('link', {data-testid: /i-btn-link4563/i});
+    const saveBtn = screen.getByTestId('i-btn-link4563');
     expect(saveBtn).toBeInTheDocument();
     userEvent.click(saveBtn);
-    expect(mockUpdateSavedById).toHaveBeenCalledTimes(1);
-    expect(mockUpdateSavedById).toHaveBeenCalledWith(4563);
+    expect(mockFindCharacter).toHaveBeenCalledTimes(1);
+    expect(mockFindCharacter).toHaveBeenCalledWith(4563);
   })
 })
