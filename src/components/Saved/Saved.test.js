@@ -45,7 +45,7 @@ describe('Saved', () => {
   })
 
   it('should navigate to Character view on button click', () => {
-    const iBtn = screen.getByTestId('i-btn-link');
+    const iBtn = screen.getByTestId('i-btn-link4563');
     expect(iBtn).toBeInTheDocument();
     userEvent.click(iBtn);
     expect(mockFindCharacter).toHaveBeenCalledTimes(1);

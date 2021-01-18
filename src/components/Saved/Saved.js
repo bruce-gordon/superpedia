@@ -24,7 +24,7 @@ const Saved = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, 
         <div className='button-div'>
           <Link
             to={`/character/${id}`}
-            data-testid='i-btn-link'
+            data-testid={`i-btn-link${id}`}
             className='button-link'
             onClick={ goToCharacter }>{ info }
           </Link>
