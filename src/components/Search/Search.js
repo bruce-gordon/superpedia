@@ -30,11 +30,13 @@ const Search = ({ getCharacter }) => {
       <h3 className='view-subheader'> Information about your favorite comic book characters is at your fingertips
       </h3>
       <form className='search-area'>
-        <label className='search-instructions' htmlFor='search'>Enter the name of a superhero, supervillain, or comic character to get started.
+        <label
+          className='search-instructions' htmlFor='search'>Enter the name of a superhero, supervillain, or comic character to get started.
         </label>
         <input
           type='text'
           name='search'
+          id='search'
           className='search-input'
           value={ charName }
           onChange={ handleChange }>
