@@ -37,6 +37,7 @@ const Search = ({ getCharacter }) => {
           type='text'
           name='search'
           id='search'
+          placeholder='Character name...'
           className='search-input'
           value={ charName }
           onChange={ handleChange }>

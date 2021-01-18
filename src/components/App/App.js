@@ -70,7 +70,9 @@ const App = () => {
     <div className='App'>
       <Navbar />
       <main>
-        <header className='App-header'>
+        <header
+          data-testid='app-header'
+          className='App-header'>
         </header>
         <Switch>
           <Route
