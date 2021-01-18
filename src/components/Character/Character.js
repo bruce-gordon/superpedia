@@ -17,7 +17,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
 
 
   const formatAliases = () => {
-    return charData ? charData.aliases.replaceAll('\r\n', ', ') : '';
+    return charData ? charData.aliases.split('\r\n').join(', ') : '';
   }
 
   const handleClick = (charData) => {
@@ -74,6 +74,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
                 </a>
               </div>
               <div
+                data-testid='save-btn'
                 className={ getStyling() }
                 onClick={ () => handleClick(charData)}>
               { plus }
