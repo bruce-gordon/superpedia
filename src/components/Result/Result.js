@@ -49,9 +49,11 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
           <Link
             to={`/character/${id}`}
             className='button-link'
+            data-testid='i-button'
             onClick={ goToCharacter }>{ info }
           </Link>
           <p
+            data-testid='save-test'
             className={ getStyling() }
             onClick={ () => handleClick(id) }
           >{ plus }
