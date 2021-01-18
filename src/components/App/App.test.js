@@ -77,6 +77,16 @@ describe('App', () => {
     userEvent.click(savedSupers);
     const savedViewHeader = screen.queryByTestId('saved-view-header');
     expect(savedViewHeader).toBeInTheDocument();
+  })
+
+  it('should go to home page when use clicks New Search', () => {
+    const newSearchBtn = screen.getByText('New Search');
+    const savedSupers = screen.getByText('Saved Supers');
+    userEvent.click(savedSupers);
+    const savedViewHeader = screen.queryByTestId('saved-view-header');
+    expect(savedViewHeader).toBeInTheDocument();
+    userEvent.click(newSearchBtn);
+    expect(screen.getByText('Search for Supers')).toBeInTheDocument();
 
   })
 })
