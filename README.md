@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Superpedia!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How To Access This Application
 
-## Available Scripts
+### [Visit the Deployed Site](https://bruce-gordon.github.io/superpedia/)
 
-In the project directory, you can run:
+*On your Terminal:*
 
-### `npm start`
++ `git clone git@github.com:bruce-gordon/rsuperpedia.git`
++ `cd superpedia`
++ `npm install`
++ `npm start` (to start the server)
++ `npm test` (to run the test suite)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
+- Javascript
+- React
+- Router
+- React Testing Library/Jest
+- Sass (scss)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Abstract
+Superpedia utilizes the api provided by ComicVine which links to their database of comic book characters.  Superpedia allows users to search for a range of comic book characters by name, view results, save results, and get more detailed information about each of their results.  This app is ideal for anyone newly introduced to comic book lore via film and television, or for a returning fan looking for more details about a favorite character.
 
-### `npm test`
+## Homepage/Search form
+![Screen Shot 2021-01-18 at 6 48 17 PM](https://user-images.githubusercontent.com/68293135/104978103-5cc4ed00-59be-11eb-834b-45972798abb2.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Result view
+![Screen Shot 2021-01-18 at 6 48 44 PM](https://user-images.githubusercontent.com/68293135/104978158-7b2ae880-59be-11eb-8884-065e106c6470.png)
 
-### `npm run build`
+## Character view
+![Screen Shot 2021-01-18 at 6 49 08 PM](https://user-images.githubusercontent.com/68293135/104978193-8da52200-59be-11eb-917c-f61c01c9d3ac.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Saved characters view
+![Screen Shot 2021-01-18 at 6 49 47 PM](https://user-images.githubusercontent.com/68293135/104978237-a7df0000-59be-11eb-902b-263f6bc8e2d1.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## About view
+![Screen Shot 2021-01-18 at 6 55 32 PM](https://user-images.githubusercontent.com/68293135/104978290-c513ce80-59be-11eb-8c9a-1613efeff623.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Process
+This project stayed true to the original concept and wireframe throughout development.  One idea for an extension was to include a form that allows the user to create their own comic character by completing the required fields.  The user would then see their custom character in the same format as their search results, and could save the character as well.  I considered adding this extension but was not able to complete that component by the project deadline.  There were unexpected issues involving access to the ComicVine api that required me to spend time researching proxy servers.  I am pleased with the outcome of my api troubleshooting and will still consider the create-your-own-super as a future extension.
 
-### `npm run eject`
+## Reflection
+This was the first project in which I was solely responsible for applying Router and writing all tests (including async testing).  I am pleased with the outcome and with my own growth in applying these concepts to my existing React foundation.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Learning Goals
+- Build a React app utilizing API data.
+- Create a multipage UX using Router.
+- Successfully test components in React and asynchronous Javascript.
+- Provide users with the ability to store/manipulate the data displayed in the application, such as favoriting or adding to a list.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Developers
+- [Bruce Gordon](https://github.com/bruce-gordon)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
