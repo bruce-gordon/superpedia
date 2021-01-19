@@ -19,3 +19,11 @@
   flex-wrap: wrap;
   background-color: $gray;
 }
+
+.loading {
+  @include font($white, 1.5vw, auto);
+  @include space(2vw 0 0 0, 3vh 4vw);
+  @include border(4px, $white, 5px);
+  background-color: $blue;
+  text-align: center;
+}

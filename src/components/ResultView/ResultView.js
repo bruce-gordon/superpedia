@@ -27,9 +27,16 @@ const ResultView = ({ searchResults, findCharacter, updateSavedById, saved }) =>
       className='result-view'>
       <h1 className='view-header'>Search Results
       </h1>
-      <div className='result-container'>
-      { results }
-      </div>
+      { searchResults.length > 0 &&
+        <div className='result-container'>
+          { results }
+        </div>
+      }
+      {
+        <h3 className='loading'>
+          Please wait, your results are loading...<br/> or click "New Search" to try again.
+        </h3>
+      }
     </section>
   )
 }
