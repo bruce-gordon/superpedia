@@ -1,6 +1,7 @@
 import React from 'react';
 import './ResultView.scss';
 import Result from '../Result/Result.js';
+import PropTypes from 'prop-types';
 
 const ResultView = ({ searchResults, findCharacter, updateSavedById, saved }) => {
   const results = searchResults.map(result => {
@@ -39,6 +40,13 @@ const ResultView = ({ searchResults, findCharacter, updateSavedById, saved }) =>
       }
     </section>
   )
+}
+
+ResultView.propTypes = {
+  saved: PropTypes.array,
+  searchResults: PropTypes.array,
+  findCharacter: PropTypes.func.isRequired,
+  updateSavedById: PropTypes.func.isRequired
 }
 
 export default ResultView;

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Character.scss';
 import { plus } from '../../icons/icons.js';
 import { getCharacterById } from '../../utilities/apiCalls.js';
+import PropTypes from 'prop-types';
 
 const Character = ({ id, details, updateSaved, saved }) => {
   const [charData, setCharData] = useState(details);
@@ -83,6 +84,13 @@ const Character = ({ id, details, updateSaved, saved }) => {
       }
       </section>
   )
- }
+}
+
+Character.propTypes = {
+  id: PropTypes.string,
+  details: PropTypes.object,
+  updateSaved: PropTypes.func.isRequired,
+  saved: PropTypes.array
+}
 
 export default Character;
