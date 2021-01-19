@@ -1,0 +1,35 @@
+@import '../../utilities/variables';
+@import '../../utilities/mixins';
+
+.about-view {
+  @include display(column, none, center);
+  background-color: $gray;
+}
+
+.view-header {
+  @include font($coal, 2vw, auto);
+  @include space(2vw 0 0 0, 1vh 3vw);
+  @include border(4px, $blue, 5px);
+  background-color: $white;
+}
+
+.about-container {
+  @include display(column, center, center);
+  @include border(4px, $white, 5px);
+  @include space(2vw 0 0 0, 1vh 3vw);
+  @include size(60%, 40%);
+  color: $white;
+  background-color: $blue;
+}
+
+.welcome {
+  @include font($white, 3.25vh, auto);
+  @include space(1vw 0 0 0, 1vh 3vw);
+  text-align: center;
+}
+
+.about-text {
+  @include space(1vh 0 2vh 0, 1vh 3vw);
+  @include font($white, 1.1vw, auto);
+  text-align: center;
+}

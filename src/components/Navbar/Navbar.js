@@ -23,9 +23,10 @@ const Navbar = () => {
         >Saved Supers
         </NavLink>
         <NavLink
-          to='/'
+          to='/about'
           className='nav-link'
-        >Create Your Own Super
+          exact activeClassName={'selected-link'}
+        >About
         </NavLink>
       </div>
     </nav>

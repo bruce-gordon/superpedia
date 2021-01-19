@@ -5,6 +5,7 @@ import Search from '../Search/Search.js';
 import ResultView from '../ResultView/ResultView.js';
 import SavedView from '../SavedView/SavedView.js';
 import Character from '../Character/Character.js';
+import About from '../About/About.js';
 import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
 
@@ -62,10 +63,6 @@ const App = () => {
     }
   }
 
-  const checkForSaved = () => {
-
-  }
-
   return (
     <div className='App'>
       <Navbar />
@@ -75,6 +72,14 @@ const App = () => {
           className='App-header'>
         </header>
         <Switch>
+          <Route
+            exact path='/about'
+            render={() => {
+              return (
+                <About />
+              )}
+            }>
+          </Route>
           <Route
             exact path='/saved'
             render={() => {
