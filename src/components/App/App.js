@@ -21,7 +21,7 @@ const App = () => {
   }, [])
 
   const getLocalStorage = async () => {
-    const storedChars =  JSON.parse(localStorage.getItem('savedChars'));
+    const storedChars = JSON.parse(localStorage.getItem('savedChars'));
     if (storedChars !== null) {
       await setSaved(storedChars);
     }
@@ -30,7 +30,8 @@ const App = () => {
   const getCharacter = (name) => {
     getData(name)
     .then((data) => setAllCharData(data.results))
-    .catch(error => setError(error.message));
+    .catch(error => setError(error.message))
+    .then(() => console.log(error))
   }
 
   const findCharacter = (id) => {
