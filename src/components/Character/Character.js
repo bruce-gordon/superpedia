@@ -88,7 +88,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
 
 Character.propTypes = {
   id: PropTypes.string,
-  details: PropTypes.object,
+  details: PropTypes.any,
   updateSaved: PropTypes.func.isRequired,
   saved: PropTypes.array
 }
