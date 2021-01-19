@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { info, plus } from '../../icons/icons.js';
 import './Result.scss';
+import PropTypes from 'prop-types';
 
 const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter, updateSavedById, saved }) => {
   const [isSaved, setIsSaved] = useState(false);
@@ -69,6 +70,20 @@ const Result = ({ id, aliases, deck, images, name, publisher, realName, siteUrl,
       </div>
     </section>
   )
+}
+
+Result.propTypes = {
+  id: PropTypes.number,
+  aliases: PropTypes.string,
+  deck: PropTypes.string,
+  images: PropTypes.object,
+  name: PropTypes.string,
+  Publisher: PropTypes.object,
+  realName: PropTypes.string,
+  siteUrl: PropTypes.string,
+  saved: PropTypes.array,
+  findCharacter: PropTypes.func.isRequired,
+  updateSavedById: PropTypes.func.isRequired
 }
 
 export default Result;

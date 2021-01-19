@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { info, plus } from '../../icons/icons.js';
 import './Saved.scss';
+import PropTypes from 'prop-types';
 
 const Saved = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, findCharacter, updateSavedById }) => {
 
@@ -46,6 +47,19 @@ const Saved = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, 
       </div>
     </section>
   )
+}
+
+Saved.propTypes = {
+  id: PropTypes.number,
+  aliases: PropTypes.string,
+  deck: PropTypes.string,
+  images: PropTypes.object,
+  name: PropTypes.string,
+  publisher: PropTypes.object,
+  realName: PropTypes.string,
+  siteUrl: PropTypes.string,
+  findCharacter: PropTypes.func.isRequired,
+  updateSavedById: PropTypes.func.isRequired
 }
 
 export default Saved;

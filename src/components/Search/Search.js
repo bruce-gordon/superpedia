@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Search.scss';
+import PropTypes from 'prop-types';
 
 const Search = ({ getCharacter }) => {
   const [charName, setCharName] = useState('');
@@ -52,6 +53,10 @@ const Search = ({ getCharacter }) => {
       </form>
     </section>
   )
+}
+
+Search.propTypes = {
+  getCharacter: PropTypes.func.isRequired
 }
 
 export default Search;

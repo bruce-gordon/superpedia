@@ -1,7 +1,7 @@
 import React  from 'react';
 import './SavedView.scss';
 import Saved from '../Saved/Saved.js';
-
+import PropTypes from 'prop-types';
 
 const SavedView = ({ saved, findCharacter, updateSavedById }) => {
 
@@ -35,6 +35,12 @@ const SavedView = ({ saved, findCharacter, updateSavedById }) => {
       </div>
     </section>
   )
+}
+
+SavedView.propTypes = {
+  saved: PropTypes.array,
+  findCharacter: PropTypes.func.isRequired,
+  updateSavedById: PropTypes.func.isRequired
 }
 
 export default SavedView;
