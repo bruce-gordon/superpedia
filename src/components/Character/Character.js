@@ -29,7 +29,8 @@ const Character = ({ id, details, updateSaved, saved }) => {
   }
 
   const checkSaved = () => {
-    const check = saved.find(char => char.id === parseInt(id));
+    const storedChars = JSON.parse(localStorage.getItem('savedChars'));
+    const check = storedChars.find(char => char.id === parseInt(id));
     (check) ? setIsSaved(true) : setIsSaved(false);
   }
 
