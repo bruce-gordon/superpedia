@@ -5,19 +5,17 @@ import { getCharacterById } from '../../utilities/apiCalls.js';
 
 const Character = ({ id, details, updateSaved, saved }) => {
   const [charData, setCharData] = useState(details);
-  const [allSaved, setAllSaved] = useState([]);
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     getCharacterById(id)
     .then((data) => { setCharData(data.results) })
-    .then(() => setAllSaved(saved))
     .then(() => checkSaved())
   }, [])
 
 
   const formatAliases = () => {
-    return charData ? charData.aliases.replaceAll('\r\n', ', ') : '';
+    return charData ? charData.aliases.split('\r\n').join(', ') : '';
   }
 
   const handleClick = (charData) => {
@@ -31,7 +29,6 @@ const Character = ({ id, details, updateSaved, saved }) => {
   }
 
   const checkSaved = () => {
-    setAllSaved(saved);
     const check = saved.find(char => char.id === parseInt(id));
     (check) ? setIsSaved(true) : setIsSaved(false);
   }
@@ -74,6 +71,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
                 </a>
               </div>
               <div
+                data-testid='save-btn'
                 className={ getStyling() }
                 onClick={ () => handleClick(charData)}>
               { plus }

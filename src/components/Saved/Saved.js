@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { info, plus } from '../../icons/icons.js';
 import './Saved.scss';
@@ -24,10 +24,13 @@ const Saved = ({ id, aliases, deck, images, name, publisher, realName, siteUrl, 
         <div className='button-div'>
           <Link
             to={`/character/${id}`}
+            data-testid={`i-btn-link${id}`}
+            name={`${id}-link`}
             className='button-link'
             onClick={ goToCharacter }>{ info }
           </Link>
           <p
+            data-testid='save-btn'
             className='button-link-save'
             onClick={ () => updateSavedById(id) }
           >{ plus }

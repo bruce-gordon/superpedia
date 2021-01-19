@@ -26,7 +26,9 @@ const SavedView = ({ saved, findCharacter, updateSavedById }) => {
   return (
     <section
       className='saved-view'>
-      <h1 className='view-header'>Saved Supers
+      <h1
+        data-testid='saved-view-header'
+        className='view-header'>Saved Supers
       </h1>
       <div className='saved-container'>
       { savedChars }

@@ -5,6 +5,7 @@ import Search from '../Search/Search.js';
 import ResultView from '../ResultView/ResultView.js';
 import SavedView from '../SavedView/SavedView.js';
 import Character from '../Character/Character.js';
+import About from '../About/About.js';
 import { getData } from '../../utilities/apiCalls.js';
 import './App.scss';
 
@@ -20,7 +21,7 @@ const App = () => {
   }, [])
 
   const getLocalStorage = async () => {
-    const storedChars =  JSON.parse(localStorage.getItem('savedChars'));
+    const storedChars = JSON.parse(localStorage.getItem('savedChars'));
     if (storedChars !== null) {
       await setSaved(storedChars);
     }
@@ -29,7 +30,8 @@ const App = () => {
   const getCharacter = (name) => {
     getData(name)
     .then((data) => setAllCharData(data.results))
-    .catch(error => setError(error.message));
+    .catch(error => setError(error.message))
+    .then(() => console.log(error))
   }
 
   const findCharacter = (id) => {
@@ -62,17 +64,23 @@ const App = () => {
     }
   }
 
-  const checkForSaved = () => {
-
-  }
-
   return (
     <div className='App'>
       <Navbar />
       <main>
-        <header className='App-header'>
+        <header
+          data-testid='app-header'
+          className='App-header'>
         </header>
         <Switch>
+          <Route
+            exact path='/about'
+            render={() => {
+              return (
+                <About />
+              )}
+            }>
+          </Route>
           <Route
             exact path='/saved'
             render={() => {
