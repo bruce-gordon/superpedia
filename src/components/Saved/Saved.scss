@@ -83,3 +83,24 @@
   max-width: 100%;
   border: 1px solid $white;
 }
+
+@media screen and (max-width: 1025px) {
+  section.result-card {
+    @include size(80%, 50%);
+  }
+  p.button-link-save {
+    @include size(40%, 40%);
+    padding: 1vw
+  }
+  a.button-link {
+    @include size(40%, 40%);
+    padding: 1vw
+  }
+  div.button-div {
+    // @include size(25%, 100%);
+    @include display(column, space-between, center);
+  }
+  div.top-half {
+    @include size(95%, 35%);
+  }
+}
