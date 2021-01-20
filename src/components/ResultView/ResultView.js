@@ -33,7 +33,7 @@ const ResultView = ({ searchResults, findCharacter, updateSavedById, saved }) =>
           { results }
         </div>
       }
-      {
+      { searchResults.length === 0 &&
         <h3 className='loading'>
           Please wait, your results are loading...<br/> or click "New Search" to try again.
         </h3>
