@@ -97,7 +97,6 @@
     padding: 1vw
   }
   div.button-div {
-    // @include size(25%, 100%);
     @include display(column, space-between, center);
   }
   div.top-half {
