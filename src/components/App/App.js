@@ -33,7 +33,7 @@ const App = () => {
     .catch(error => setError(error.message))
     .then(() => console.log(error))
   }
-
+  //test
   const findCharacter = (id) => {
     const match = allCharData.find(char => char.id === id);
     setCharacter(match);
