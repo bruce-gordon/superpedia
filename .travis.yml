@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: tdUSMUhm60IYXlo7kgE66cclUsQBaZK1+wHky2BTifXHtQc54HPqUJQoSbKr5Td2DzuXyRGUIo0EY1eYcShYyZa4my2W2FkhYym0peUCltJrpHTBdkjpuY/4PlKQ2GgzIfoTYMKADx+Wbn8Va1esKbT+ISTw+L5itY/5E3tpzhbtwnKz8UY8GI3HUbUgrk2INQvs3s0cW9wWDCIJTcfuddapD3qTz0RbpI/TnIMFgPwdwHiL8x0JWlh+cV2GSICajz22RDNQVOZt/LLq+Qg59mFRn4ivpRE2+DporI0ng9Bk7HpCXWsE7Js2IX7zPi4YLVbZ4RBV6FAaKudNv0N5if1+3dp0Nhs6xYMOwREUw6DfJ3Yd9QtwK5x0QEdUrezHrgT7th53MWh+Ku1PXRCk5xXOxGDNjkqkhgFOf55WlCJDk9JedXp4hDbLYfTUVSKYZfMQyW9Rv/zLt6Eic/tE/539vtKT2XtfetnO9BUZsZshB3oJEd06fOOAXQFyhdaOCjcn86ZXB5nbuO/ym4Vroq/eV6vS2dmx/TppVPFq/Lr7aNc13TRyWbK3ThPjGBMvgSfpFBd/gfIGiptXQP9Pcvcl2rUC2879UCFEl6vllDdg2u6JBIwH2UINrZfHCCGwXbodfq7EHcMQKy0rspAF4+4sJiMW2NC+wTGaE5C6fUs=
+  app: superpedia
+  skip_cleanup: true
