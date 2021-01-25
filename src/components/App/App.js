@@ -28,12 +28,13 @@ const App = () => {
   }
 
   const getCharacter = (name) => {
+    setAllCharData([]);
     getData(name)
     .then((data) => setAllCharData(data.results))
     .catch(error => setError(error.message))
     .then(() => console.log(error))
   }
-  //test
+
   const findCharacter = (id) => {
     const match = allCharData.find(char => char.id === id);
     setCharacter(match);
