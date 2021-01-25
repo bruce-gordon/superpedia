@@ -31,8 +31,10 @@ const Character = ({ id, details, updateSaved, saved }) => {
 
   const checkSaved = () => {
     const storedChars = JSON.parse(localStorage.getItem('savedChars'));
-    const check = storedChars.find(char => char.id === parseInt(id));
-    (check) ? setIsSaved(true) : setIsSaved(false);
+    if (storedChars) {
+      const check = storedChars.find(char => char.id === parseInt(id));
+      (check) ? setIsSaved(true) : setIsSaved(false);
+    }
   }
 
   const getStyling = () => {
@@ -87,7 +89,7 @@ const Character = ({ id, details, updateSaved, saved }) => {
 }
 
 Character.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   details: PropTypes.any,
   updateSaved: PropTypes.func.isRequired,
   saved: PropTypes.array
