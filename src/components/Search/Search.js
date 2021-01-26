@@ -48,7 +48,6 @@ const Search = ({ getCharacter }) => {
           className={ disableLink() }
           onClick={ handleClick }
           >Search
-
         </Link>
       </form>
     </section>

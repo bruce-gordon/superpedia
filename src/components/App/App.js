@@ -28,6 +28,7 @@ const App = () => {
   }
 
   const getCharacter = (name) => {
+    setAllCharData([]);
     getData(name)
     .then((data) => setAllCharData(data.results))
     .catch(error => setError(error.message))
